@@ -4,7 +4,7 @@ class Database{
     private $host='localhost';
     private $Db_name='chatkitapi2';
     private $userName='root';
-    private $pass='19518b';
+    private $pass='';
     private $conn;
 
     //db connect
@@ -16,7 +16,7 @@ class Database{
             $this->conn=new PDO($mysql_connection_str,$this->userName,$this->pass);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         }catch(PDOEXception $e){
-            echo 'connection error:shida iko hapa'.$e->getMessage();
+            echo 'connection error:'.$e->getMessage();
         }
         return $this->conn;
     }
